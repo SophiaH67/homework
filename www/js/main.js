@@ -9,7 +9,7 @@
 function generateCard(title, tasks, date, status, id, link) {
     let time = new Date(date)
     return `<div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="${title}.png" alt="Image of ${title}">
+                <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}">
                 <div class="card-body">
                     <h5 class="card-title">${title}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">${('0' + time.getMonth()).slice(-2)}/${('0' + time.getDate()).slice(-2)} ${('0' + time.getHours()).slice(-2)}:${('0' + time.getMinutes()).slice(-2)}</h6>
