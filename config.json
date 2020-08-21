@@ -2,6 +2,6 @@
     "mysql": {
         "username": "root",
         "password": "6LmRCQBufqprjUpW",
-        "host" : "localhost"
+        "host" : "host.docker.internal"
     }
 }
