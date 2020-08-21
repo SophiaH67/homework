@@ -8,8 +8,8 @@ services:
     database:
         image: "mysql:8.0.21"
         volumes:
-            # - "./:/var/lib/mysql"
-            - "./db/:/docker-entrypoint-initdb.d"
+            - "./db/:/var/lib/mysql"
+            - "./db/setup/:/docker-entrypoint-initdb.d"
         ports:
             - "3306:3306"
         restart: always
