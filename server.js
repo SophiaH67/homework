@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
+const bodyParser = require("body-parser");
 const port = 5555;
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(express.static('www/html'));
 app.use(express.static('www/css'));
