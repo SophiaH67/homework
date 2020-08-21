@@ -7,8 +7,9 @@ services:
         restart: always
     database:
         image: "mysql:8.0.21"
-        # volumes:
+        volumes:
             # - "./:/var/lib/mysql"
+            - "./db/:/docker-entrypoint-initdb.d"
         ports:
             - "3306:3306"
         restart: always
