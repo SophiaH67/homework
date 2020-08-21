@@ -14,7 +14,7 @@ app.get('/api/*', function (req, res) {
     api.shift();
     api = api[0];
     const result = require(`./api/${api}.js`);
-    res.send(result.run(url));
+    res.send(result.run(req));
 });
 
 app.listen(port, () => {
