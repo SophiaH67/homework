@@ -6,7 +6,7 @@ services:
             - "5555:5555"
         restart: always
     database:
-        image: "mysql:8.0.21"
+        image: "mysql:5.7.31"
         volumes:
             - "./db/database/:/var/lib/mysql"
             - "./db/setup/:/docker-entrypoint-initdb.d"
