@@ -14,7 +14,6 @@ app.get('/api/*', function (req, res) {
     api.shift();
     api = api[0];
     const result = require(`./api/${api}.js`);
-    console.log(result);
     res.send(result);
 });
 
