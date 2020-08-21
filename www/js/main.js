@@ -7,7 +7,7 @@
  * @param {String} link 
  */
 function generateCard(title, tasks, date, status, id, link) {
-    let time = new Date(date)
+    let time = new Date(date);
     return `<div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}">
                 <div class="card-body">
