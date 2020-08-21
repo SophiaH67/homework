@@ -1,6 +1,5 @@
 #container {
-    margin: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    width: 90%;
+    max-width: 80rem !important;
+    margin-left: auto;
+    margin-right: auto;
 }
