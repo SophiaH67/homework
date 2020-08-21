@@ -3,7 +3,6 @@ CREATE TABLE homework.entries (
     title varchar(255),
     tasks varchar(255),
     date BIGINT,
-    status SMALLINT,
     link varchar(255),
     PRIMARY KEY( ID)
 );
