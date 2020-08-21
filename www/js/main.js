@@ -8,7 +8,7 @@
  */
 function generateCard(title, tasks, date, status, id, link) {
     let time = new Date(date)
-    return `<div class="card mx-auto" style="width: 18rem;">
+    return `<div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="${title}.png" alt="Image of ${title}">
                 <div class="card-body">
                     <h5 class="card-title">${title}</h5>
