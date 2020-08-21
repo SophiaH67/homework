@@ -8,7 +8,7 @@
  */
 function generateCard(title, tasks, date, id, link) {
     let time = new Date(date);
-    return `<div class="card" style="width: 18rem;" id="">
+    return `<div class="card" style="width: 18rem;" id="${id}">
                 <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}">
                 <div class="card-body">
                     <h5 class="card-title">${title}</h5>
