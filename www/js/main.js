@@ -19,6 +19,19 @@ function generateCard(title, tasks, date, id, link) {
             </div>`;
 }
 
+function generateEditableCard(title, tasks, date, id, link) {
+    let time = new Date(date);
+    return `<div class="card" style="width: 18rem;" id="${id}">
+                <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}">
+                <div class="card-body">
+                    <input type="text" class="card-title" placeholder="Title">${title}</input>
+                    <input type="text" class="card-subtitle mb-2 text-muted" placeholder="Date & time">${('0' + time.getMonth()).slice(-2)}/${('0' + time.getDate()).slice(-2)} ${('0' + time.getHours()).slice(-2)}:${('0' + time.getMinutes()).slice(-2)}</input>
+
+                    <input type="text" placeholder="Link (optional)"></input> 
+                </div>
+            </div>`;
+}
+
 function appendCard(html) {
     let container = document.getElementById('container');
     let element = document.createElement("div");
