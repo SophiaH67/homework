@@ -22,7 +22,7 @@ function save(id) {
 
     data.title = title;
     data.tasks = tasks;
-    data.time = date;
+    data.time = date.getTime();
     $.ajax({
         type: "POST",
         url: '/api/addHomework',
