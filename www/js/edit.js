@@ -42,9 +42,12 @@ function edit(id) {
     link.innerHTML = `<input class="form-control" id="${link.id}" type="text" value="${link.innerText}">`;
     time.innerHTML = `<input class="form-control" id="${time.id}" type="text" value="${time.innerText}">`;
     edit.innerText = "Save";
-    edit.onclick = function() {
-        save(this.parentElement.parentElement.id);
-    }
+    
+    title.id = "";
+    tasks.id = "";
+    link.id = "";
+    time.id = "";
+    edit.onclick = function(){ save(this.parentElement.parentElement.id) }
 
 }
 
@@ -56,13 +59,13 @@ function save(id) {
     let time = document.getElementById('time-' + id);
     let edit = document.getElementById('edit-' + id);
 
-    title.innerHTML = `<td id="${title.id}">${title.value}</td>`;
-    tasks.innerHTML = `<td id="${tasks.id}">${tasks.value}</td>`;
-    link.innerHTML = `<td id="${link.id}">${link.value}</td>`;
-    time.innerHTML = `<td id="${time.id}">${time.value}</td>`;
+    console.log(title);
+
+    title.parentElement.innerHTML = `<td id="${title.id}">${title.value}</td>`;
+    tasks.parentElement.innerHTML = `<td id="${tasks.id}">${tasks.value}</td>`;
+    link.parentElement.innerHTML = `<td id="${link.id}">${link.value}</td>`;
+    time.parentElement.innerHTML = `<td id="${time.id}">${time.value}</td>`;
     edit.innerText = "Edit";
-    edit.onclick = function() {
-        edit(this.parentElement.parentElement.id);
-    }
+    edit.onclick = function(){ edit(this.parentElement.parentElement.id) }
 
 }
