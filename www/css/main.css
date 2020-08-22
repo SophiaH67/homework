@@ -1,5 +1,11 @@
-#container {
+.card-container {
     max-width: 80rem !important;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.editable-card-container {
+    max-width: 18rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
