@@ -8,8 +8,8 @@ function add(title, tasks, date, id, link) {
       <td id="title-${id}">${title}</td>
       <td id="tasks-${id}">${tasks}</td>
       <td id="link-${id}">${link}</td>
-      <td id="time-${id}">${time.getFullYear()} ${('0' + time.getMonth()).slice(-2)} ${('0' + time.getDate()).slice(-2)} ${time.getHours()}:${time.getMinutes()}</td>
-      <td id="actions-${id}">
+      <td id="time-${id}">${time.getFullYear()} ${('0' + (time.getMonth()+1)).slice(-2)} ${('0' + time.getDate()).slice(-2)} ${time.getHours()}:${time.getMinutes()}</td>
+      <td class="float-right" id="actions-${id}">
         <button id="edit-${id}" class="btn btn-primary" onclick="edit(this.parentElement.parentElement.id)">Edit</button>
         <button class="btn btn-danger">Delete</button>
       </td>
@@ -66,7 +66,7 @@ function save(id) {
     data.id = id;
     let dateArr = time.value.split(' ');
     let year = dateArr[0];
-    let month = dateArr[1] - 1;
+    let month = dateArr[1] -1;
     let day = dateArr[2];
     let timeArr = dateArr[3].split(':');
     let hour = timeArr[0];

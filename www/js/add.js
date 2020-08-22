@@ -8,7 +8,7 @@ function save(id) {
     const dateArr = document.getElementById('time-' + id).value.split(" ");
     // Dates and times (yay)
     const year = dateArr[0];
-    const month = dateArr[1] - 1;
+    const month = dateArr[1] -1;
     const day = dateArr[2];
 
     const timeArr = dateArr[3].split(":");
@@ -28,4 +28,5 @@ function save(id) {
         url: '/api/addHomework',
         data: data
     });
+    document.location.href = "/";
 }
