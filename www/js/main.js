@@ -31,6 +31,7 @@ function generateEditableCard(title, tasks, date, id, link) {
                 </div>
                 <div class="card-footer">
                     <input type="text" class="form-control" placeholder="YYYY MM DD hh:mm" value="${time.getFullYear()} ${('0'+time.getMonth()).slice(-2)} ${('0'+time.getDate()).slice(-2)} ${time.getHours()}:${time.getMinutes()}">
+                    <button type="button" class="btn btn-primary" onclick="save()">Save</button>
                 </div>
             </div>`;
 }
