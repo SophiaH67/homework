@@ -47,7 +47,7 @@ function edit(id) {
     tasks.id = "";
     link.id = "";
     time.id = "";
-    edit.onclick = function(){ save(this.parentElement.parentElement.id) }
+    edit.onclick = function(){ window.save(this.parentElement.parentElement.id) }
 
 }
 
@@ -59,13 +59,16 @@ function save(id) {
     let time = document.getElementById('time-' + id);
     let edit = document.getElementById('edit-' + id);
 
-    console.log(title);
+    title.parentElement.id = title.id;
+    tasks.parentElement.id = tasks.id;
+    link.parentElement.id = link.id;
+    time.parentElement.id = time.id;
 
-    title.parentElement.innerHTML = `<td id="${title.id}">${title.value}</td>`;
-    tasks.parentElement.innerHTML = `<td id="${tasks.id}">${tasks.value}</td>`;
-    link.parentElement.innerHTML = `<td id="${link.id}">${link.value}</td>`;
-    time.parentElement.innerHTML = `<td id="${time.id}">${time.value}</td>`;
+    title.parentElement.innerText = title.value;
+    tasks.parentElement.innerText = title.value;
+    link.parentElement.innerText = title.value;
+    time.parentElement.innerText = title.value;
     edit.innerText = "Edit";
-    edit.onclick = function(){ edit(this.parentElement.parentElement.id) }
+    edit.onclick = function(){ window.edit(this.parentElement.parentElement.id) }
 
 }
