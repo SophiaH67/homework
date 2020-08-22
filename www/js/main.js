@@ -26,7 +26,7 @@ function generateEditableCard(title, tasks, date, id, link) {
                 <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}">
                 <div class="card-body">
                     <input type="text" class="card-title" placeholder="Title">${title}</input>
-                    <input type="text" placeholder="Link (optional)"></input> 
+                    <input type="text" placeholder="Tasks"></input> 
                     
                 </div>
                 <div class="card-footer">
