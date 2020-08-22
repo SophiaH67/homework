@@ -9,7 +9,7 @@
 function generateCard(title, tasks, date, id, link) {
     let time = new Date(date);
     return `<div class="card" style="width: 18rem;" id="${id}">
-                <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}">
+                <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}" width="247" height="160">
                 <div class="card-body">
                     <h5 class="card-title">${title}</h5>
                     <a ${link.length < 5 ? "href='" + link + "' " : "onClick=' notify(\"Homework hasn't been added yet\", \"error\"); '"} class="btn btn-${link.length == 0 ? "success" : "danger"}">${tasks}</a>
@@ -23,7 +23,7 @@ function generateCard(title, tasks, date, id, link) {
 function generateEditableCard(title, tasks, date, id, link) {
     let time = new Date(date);
     return `<div class="card" style="width: 18rem;" id="${id}">
-                <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}">
+                <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}" width="247" height="160">
                 <div class="card-body">
                     <input id="title-${id}" type="text" class="form-control" placeholder="Title" value="${title}">
                     <input id="tasks-${id}" type="text" class="form-control" placeholder="Tasks" value="${tasks}">
