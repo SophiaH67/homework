@@ -1,5 +1,10 @@
 
 exports.run = function (req) {
     const connection = require('../lib/sql.js').connection;
-    connection.query("SELECT * FROM entries WHERE date < " + new Date().getTime());
+    let values = [];
+    values.push(req.body.title);
+    values.push(req.body.tasks);
+    values.push(req.body.time);
+    values.push("null");
+    return connection.query('INSERT INTO `entries` (`title`, `tasks`, `date`, `link`) VALUES (?, ?, ?, ?)', values);
 }
