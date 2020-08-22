@@ -14,7 +14,7 @@ function generateCard(title, tasks, date, id, link) {
                 <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}" width="247" height="160">
                 <div class="card-body">
                     <h5 class="card-title">${title}</h5>
-                    <a ${link.length > 6 ? "href='" + link + "' " : "onClick=' notify(\"Homework hasn't been added yet\", \"error\"); '"} class="btn btn-${link.length > 6 ? "success" : "danger"}">${tasks}</a>
+                    <a ${link.length > 6 ? "href='" + link + "' " : 'onClick="notAdded()"'} class="btn btn-${link.length > 6 ? "success" : "danger"}">${tasks}</a>
                 </div>
             <div class="card-footer">
                 <small type="text" class="text-muted" placeholder="Date & time">${('0' + (time.getMonth() + 1)).slice(-2)}/${('0' + time.getDate()).slice(-2)} ${('0' + time.getHours()).slice(-2)}:${('0' + time.getMinutes()).slice(-2)}</small>
@@ -79,4 +79,9 @@ function notify(msg, type) {
             clearInterval(interval);
         }
     }, 10);
+}
+
+function notAdded() {
+    // This is a function because nesting quotes wasn't working properly
+    notify('This homework isn\'t finished yet', 'danger');
 }
