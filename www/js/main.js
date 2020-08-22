@@ -25,12 +25,12 @@ function generateEditableCard(title, tasks, date, id, link) {
     return `<div class="card" style="width: 18rem;" id="${id}">
                 <img class="card-img-top" src="${title}.png" onerror="this.src='error.png'" alt="Image of ${title}">
                 <div class="card-body">
-                    <input type="text" class="form-control" placeholder="Title" value="${title}">
-                    <input type="text" class="form-control" placeholder="Tasks" value="${tasks}">
+                    <input id="title-${id}" type="text" class="form-control" placeholder="Title" value="${title}">
+                    <input id="tasks-${id}" type="text" class="form-control" placeholder="Tasks" value="${tasks}">
                     
                 </div>
                 <div class="card-footer">
-                    <input type="text" class="form-control" placeholder="YYYY MM DD hh:mm" value="${time.getFullYear()} ${('0'+time.getMonth()).slice(-2)} ${('0'+time.getDate()).slice(-2)} ${time.getHours()}:${time.getMinutes()}">
+                    <input id="time-${id}" type="text" class="form-control" placeholder="YYYY MM DD hh:mm" value="${time.getFullYear()} ${('0'+time.getMonth()).slice(-2)} ${('0'+time.getDate()).slice(-2)} ${time.getHours()}:${time.getMinutes()}">
                     <button type="button" class="btn btn-primary" onclick="save()">Save</button>
                 </div>
             </div>`;
