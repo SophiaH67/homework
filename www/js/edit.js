@@ -37,10 +37,10 @@ function edit(id) {
     let time = document.getElementById('time-' + id);
     let edit = document.getElementById('edit-' + id);
 
-    title.innerHTML = `<input id="${title.id}" type="text" value="${title.innerText}">`;
-    tasks.innerHTML = `<input id="${tasks.id}" type="text" value="${tasks.innerText}">`;
-    link.innerHTML = `<input id="${link.id}" type="text" value="${link.innerText}">`;
-    time.innerHTML = `<input id="${time.id}" type="text" value="${time.innerText}">`;
+    title.innerHTML = `<input class="form-control" id="${title.id}" type="text" value="${title.innerText}">`;
+    tasks.innerHTML = `<input class="form-control" id="${tasks.id}" type="text" value="${tasks.innerText}">`;
+    link.innerHTML = `<input class="form-control" id="${link.id}" type="text" value="${link.innerText}">`;
+    time.innerHTML = `<input class="form-control" id="${time.id}" type="text" value="${time.innerText}">`;
     edit.innerText = "Save";
     edit.onclick = function() {
         save(this.parentElement.parentElement.id);
