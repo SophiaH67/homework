@@ -1,3 +1,4 @@
+'use strict';
 function init() {
     $.getJSON("/api/getHomework", function (data) {
         var items = [];
