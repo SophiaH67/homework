@@ -1,5 +1,5 @@
 'use strict';
-function init() {
+document.addEventListener("DOMContentLoaded", function(){
     $.getJSON("/api/getHomework", function (data) {
         var items = [];
         $.each(data, function (key, val) {
@@ -7,5 +7,5 @@ function init() {
             appendCard(generateCard(val.title, val.tasks, val.date, val.ID, val.link));
         });
     });
-}
+});
 
