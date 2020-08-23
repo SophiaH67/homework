@@ -1,3 +1,4 @@
+'use strict';
 function add(title, tasks, date, id, link) {
     const tbody = document.getElementById('table-container');
     let element = document.createElement('tr');
@@ -19,7 +20,7 @@ function add(title, tasks, date, id, link) {
     tbody.appendChild(element);
 }
 
-function init() {
+document.addEventListener("DOMContentLoaded", function(){
     window.editing = false;
     $.getJSON("/api/getHomework", function (data) {
         $.each(data, function (key, val) {
@@ -27,7 +28,7 @@ function init() {
             add(val.title, val.tasks, val.date, val.ID, val.link);
         });
     });
-}
+});
 
 function edit(id) {
     window.editing = true;
@@ -71,7 +72,7 @@ function save(id) {
     let timeArr = dateArr[3].split(':');
     let hour = timeArr[0];
     let minute = timeArr[1];
-    data.date = new Date(year, month, day, hour, minute, 00).getTime();
+    data.date = new Date(year, month, day, hour, minute, 0).getTime();
 
     title.parentElement.id = title.id;
     tasks.parentElement.id = tasks.id;
