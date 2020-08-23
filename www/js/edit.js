@@ -95,7 +95,7 @@ function save(id) {
 
 function remove(id) {
     let element = document.getElementById(id).parentElement.parentElement;
-    element.parentElement.removeChild(element);
+    element.parentNode.removeChild(element);
     
     let data = {};
     data.id = id;
