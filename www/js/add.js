@@ -28,5 +28,8 @@ function save(id) {
         url: '/api/addHomework',
         data: data
     });
-    document.location.href = "/";
+    notify('Homework added. Redirecting you in 5 seconds...', 'success')
+    setTimeout(() => {
+        document.location.href = "/";
+    }, 5000);
 }
