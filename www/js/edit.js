@@ -11,7 +11,7 @@ function add(title, tasks, date, id, link) {
       <td id="time-${id}">${time.getFullYear()} ${('0' + (time.getMonth()+1)).slice(-2)} ${('0' + time.getDate()).slice(-2)} ${time.getHours()}:${time.getMinutes()}</td>
       <td class="float-right" id="actions-${id}">
         <button id="edit-${id}" class="btn btn-primary" onclick="edit(this.parentElement.parentElement.id)">Edit</button>
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger" onclick="remove(this.parentElement.parentElement.id)">Delete</button>
       </td>
     </tr>
     `;
@@ -91,4 +91,17 @@ function save(id) {
         data: data
     });
 
+}
+
+function remove(id) {
+    let element = document.getElementById(id).parentElement.parentElement;
+    element.parentNode.removeChild(element);
+    
+    let data = {};
+    data.id = id;
+    $.ajax({
+        type: "POST",
+        url: '/api/deleteHomework',
+        data: data
+    });
 }
