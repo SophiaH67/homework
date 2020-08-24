@@ -3,6 +3,7 @@ services:
     web:
         build: .
         ports:
+            # external : internal
             - "5555:5555"
         restart: unless-stopped
     database:
